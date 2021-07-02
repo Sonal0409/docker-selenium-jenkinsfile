@@ -4,7 +4,7 @@ pipeline {
             label 'docker' && 'maven'
         }
     }
-    stages { 	
+    stages {
         stage('Build Jar') {
             steps {
                 sh 'mvn clean package -DskipTests'
@@ -13,7 +13,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
-                	app = docker.build("vinsdocker/containertest")
+                	app = docker.build("abhijithvg/containertest")
                 }
             }
         }
@@ -26,6 +26,6 @@ pipeline {
 			        }
                 }
             }
-        }        
+        }
     }
 }
