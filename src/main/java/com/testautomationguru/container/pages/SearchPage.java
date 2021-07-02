@@ -21,7 +21,8 @@ public class SearchPage {
 //     @FindBy(css = "input.lsb")
     @FindBy(name = "btnK")
     private WebElement searchButton;
-
+    
+//     @FindBy(className = "rc")
     @FindBy(className = "rcnt")
     private List<WebElement> searchResults;
 
@@ -45,6 +46,7 @@ public class SearchPage {
         wait.until(ExpectedConditions.elementToBeClickable(this.searchButton));
         System.out.println("Search button clicked");
         this.searchButton.click();
+//         wait.until(ExpectedConditions.presenceOfElementLocated(By.className("rc")));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.className("rcnt")));
         System.out.println("Results appeared");
     }
